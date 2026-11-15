@@ -17,6 +17,7 @@ jobs:
     timeout-minutes: 20
     permissions:
       contents: write
+      id-token: write
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -56,3 +57,7 @@ jobs:
           sha256sum "$tarball" > SHA256SUMS
           gh release create "$TAG" "$tarball" SHA256SUMS \
             --repo "$GITHUB_REPOSITORY" --title "$TAG" --notes-file notes.md --verify-tag
+      - name: npm publish
+        env:
+          TAG: ${{ github.ref_name }}
+        run: mise exec -- npm publish "starlight-luau-${TAG#v}.tgz" --provenance --access public

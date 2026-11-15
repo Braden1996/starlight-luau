@@ -8,7 +8,7 @@
 
 <p align="center">
   <a href="https://github.com/Braden1996/starlight-luau/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/Braden1996/starlight-luau/actions/workflows/ci.yml/badge.svg"></a>
-  <a href="https://github.com/Braden1996/starlight-luau/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/Braden1996/starlight-luau?sort=semver"></a>
+  <a href="https://www.npmjs.com/package/starlight-luau"><img alt="npm" src="https://img.shields.io/npm/v/starlight-luau"></a>
   <a href="LICENSE"><img alt="MIT licence" src="https://img.shields.io/badge/licence-MIT-blue"></a>
   <img alt="Luau --!strict, new solver" src="https://img.shields.io/badge/Luau-strict%2C%20new%20solver-3d63dd">
   <img alt="Astro + Starlight" src="https://img.shields.io/badge/Astro-Starlight-7e3bdf">
@@ -57,12 +57,15 @@ That module becomes a page with:
 
 The plugin needs two things: the package itself, and Luau's own `luau-ast` executable on `PATH` at build time.
 
-1. Add the package. It ships TypeScript sources, which Astro loads directly, so it has no build step. It is
-   published as a release tarball:
+1. Add the package from [npm](https://www.npmjs.com/package/starlight-luau). It ships TypeScript sources, which Astro
+   loads directly, so it has no build step:
 
    ```sh
-   bun add https://github.com/Braden1996/starlight-luau/releases/download/v0.1.0/starlight-luau-0.1.0.tgz
+   bun add starlight-luau
    ```
+
+   Each release is also attached to its [GitHub release](https://github.com/Braden1996/starlight-luau/releases) as a
+   tarball with a `SHA256SUMS` file, and npm versions carry provenance from the release workflow.
 
 2. Pin `luau-ast`. It is part of every [Luau release](https://github.com/luau-lang/luau/releases) (0.747 or later).
    With [mise](https://mise.jdx.dev), add it to `mise.toml` and lock its checksums:
