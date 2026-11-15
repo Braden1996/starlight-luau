@@ -1,0 +1,26 @@
+name: Bug report
+description: A Luau signature that renders wrongly, a broken link, or a build failure.
+labels: ["bug"]
+body:
+  - type: textarea
+    id: source
+    attributes:
+      label: Luau source
+      description: The smallest module (and spec file, if examples are involved) that shows the problem.
+      render: luau
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected and what you got
+      description: Paste the generated Markdown or a screenshot of the page.
+    validations:
+      required: true
+  - type: input
+    id: versions
+    attributes:
+      label: starlight-luau, Luau (luau-ast), Astro and Starlight versions
+      placeholder: "starlight-luau 0.1.0, luau 0.747, astro 7.4.12, @astrojs/starlight 0.43.1"
+    validations:
+      required: true

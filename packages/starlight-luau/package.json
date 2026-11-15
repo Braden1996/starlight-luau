@@ -1,0 +1,46 @@
+{
+  "name": "starlight-luau",
+  "version": "0.1.0",
+  "description": "A Starlight plugin that generates an API reference from Luau types: no doc comments needed.",
+  "keywords": ["starlight", "starlight-plugin", "astro", "luau", "api-reference", "documentation"],
+  "homepage": "https://github.com/Braden1996/starlight-luau#readme",
+  "bugs": "https://github.com/Braden1996/starlight-luau/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Braden1996/starlight-luau.git",
+    "directory": "packages/starlight-luau"
+  },
+  "license": "MIT",
+  "author": "Braden Marshall",
+  "type": "module",
+  "exports": {
+    ".": "./index.ts",
+    "./styles.css": "./styles/luau.css"
+  },
+  "files": ["index.ts", "src", "!src/**/*.test.ts", "!src/testing", "styles"],
+  "scripts": {
+    "typecheck": "tsrs -p tsconfig.src.json --noEmit && tsrs -p tsconfig.test.json --noEmit",
+    "lint": "oxlint --type-aware --deny-warnings",
+    "fmt": "oxfmt --write",
+    "fmt:check": "oxfmt --check",
+    "test": "bun test",
+    "snapshots": "bun src/testing/update-snapshots.ts",
+    "banner": "bun scripts/banner.ts",
+    "banner:check": "bun scripts/banner.ts --check"
+  },
+  "devDependencies": {
+    "@astrojs/starlight": "0.43.1",
+    "@types/bun": "1.4.4",
+    "@types/node": "26.6.6",
+    "astro": "7.4.12",
+    "oxfmt": "0.78.0",
+    "oxlint": "1.93.0",
+    "tsrs": "0.25.0-ts7.1.0-beta"
+  },
+  "peerDependencies": {
+    "@astrojs/starlight": ">=0.43.0"
+  },
+  "engines": {
+    "node": ">=26.13.1"
+  }
+}

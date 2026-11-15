@@ -1,0 +1,4 @@
+* text=auto eol=lf
+.github/banner.svg linguist-generated=true
+fixtures/expected/** linguist-generated=true
+*.luau linguist-language=Luau

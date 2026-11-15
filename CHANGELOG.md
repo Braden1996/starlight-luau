@@ -1,0 +1,26 @@
+# Changelog
+
+All notable changes to this project are documented here. The format follows
+[Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project uses
+[Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [Unreleased]
+
+## [0.1.0] - 2026-11-15
+
+### Added
+
+- The `starlight-luau` Starlight plugin. It generates one API page per Luau module, plus an overview, from types
+  alone. It adds a sidebar group and its stylesheet, and watches sources during `astro dev`.
+- Parsing through Luau's own `luau-ast`, with `read`/`write` modifiers and type-function headers recovered from source
+  tokens.
+- Rendering of functions, methods, aliases and type functions; generics, generic packs and defaults; unions,
+  optionals, intersections, tables, indexers, arrays, function types, type packs, singletons and `typeof`.
+- Cross-module type links through `require("./Module")`, variants tables for tagged unions, and notes for generics
+  read through type-function aliases such as `OkOf<R>`.
+- Optional hand-written prose per module, function or type, with warnings for prose that matches nothing.
+- Examples from colocated unit tests: test names as behaviour descriptions and test bodies as code.
+- `generateApi`, for building pages without the plugin.
+
+[Unreleased]: https://github.com/Braden1996/starlight-luau/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/Braden1996/starlight-luau/releases/tag/v0.1.0

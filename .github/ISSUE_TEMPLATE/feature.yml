@@ -1,0 +1,15 @@
+name: Feature request
+description: Luau syntax that is not rendered yet, or a new option for the plugin.
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What you want to document
+      description: The Luau source, and how you would like its page to look.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: What you do today instead

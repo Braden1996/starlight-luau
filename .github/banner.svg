@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="400" viewBox="0 0 1280 400" role="img" aria-labelledby="title desc">
+<title id="title">starlight-luau</title>
+<desc id="desc">A Starlight plugin that generates API reference pages from Luau types</desc>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0d1117"/><stop offset="1" stop-color="#10203f"/></linearGradient><linearGradient id="core" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8ab4ff"/><stop offset="1" stop-color="#3d63dd"/></linearGradient></defs>
+<rect fill="url(#bg)" height="400" width="1280"/>
+<rect fill="#0d1117" height="176" rx="18" stroke="url(#core)" stroke-width="3" width="220" x="96" y="112"/>
+<text fill="#c678dd" font-family="'JetBrains Mono','Cascadia Code',Consolas,monospace" font-size="22" x="122" y="166">export type</text>
+<text fill="#8ab4ff" font-family="'JetBrains Mono','Cascadia Code',Consolas,monospace" font-size="22" x="122" y="204">Shape =</text>
+<text fill="#7ee2a8" font-family="'JetBrains Mono','Cascadia Code',Consolas,monospace" font-size="22" x="140" y="242">| Circle</text>
+<text fill="#7ee2a8" font-family="'JetBrains Mono','Cascadia Code',Consolas,monospace" font-size="22" x="140" y="276">| Square</text>
+<path d="M330 200 L 392 200" stroke="url(#core)" stroke-linecap="round" stroke-width="6"/>
+<path d="M380 186 L 396 200 L 380 214" fill="none" stroke="#8ab4ff" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/>
+<text fill="#ffffff" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="68" font-weight="700" letter-spacing="-1" x="440" y="140">starlight-luau</text>
+<text fill="#c9d1ff" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="24" x="442" y="184">API reference pages for Starlight, generated from Luau types</text>
+<rect fill="#0d1117" fill-opacity="0.8" height="96" rx="10" stroke="#3d63dd" stroke-opacity="0.6" width="760" x="440" y="210"/>
+<text font-family="'JetBrains Mono','Cascadia Code',Consolas,monospace" font-size="21" x="464" y="248"><tspan fill="#c678dd">function</tspan><tspan fill="#e6edf3"> Result.map</tspan><tspan fill="#8b949e">&lt;</tspan><tspan fill="#f7a072">R, U</tspan><tspan fill="#8b949e">&gt;(</tspan><tspan fill="#e6edf3">r</tspan><tspan fill="#8b949e">: </tspan><tspan fill="#f7a072">R</tspan><tspan fill="#e6edf3">, f</tspan><tspan fill="#8b949e">: (</tspan><tspan fill="#8ab4ff">OkOf</tspan><tspan fill="#8b949e">&lt;R&gt;) -&gt; U)</tspan></text>
+<text font-family="'JetBrains Mono','Cascadia Code',Consolas,monospace" font-size="21" x="464" y="284"><tspan fill="#7ee2a8">→ </tspan><tspan fill="#7ee2a8">api/result/#map</tspan><tspan fill="#8b949e">  linked types · variants · examples from tests</tspan></text>
+<text fill="#7ee2a8" font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif" font-size="20" x="442" y="350">v0.1.0  ·  Luau types only, no doc comments  ·  Astro + Starlight plugin</text>
+</svg>
