@@ -11,8 +11,8 @@ updates:
       actions:
         patterns: ["*"]
     commit-message:
-      prefix: build
-      include: scope
+      # One scope for every ecosystem: `include: scope` writes `deps-dev`, which pr-title rejects.
+      prefix: build(deps)
   - package-ecosystem: bun
     directory: /
     schedule:
@@ -24,5 +24,4 @@ updates:
       packages:
         patterns: ["*"]
     commit-message:
-      prefix: build
-      include: scope
+      prefix: build(deps)
