@@ -6,6 +6,10 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+### Changed
+
+- Releases are published to npm as `starlight-luau`, with provenance, as well as to GitHub releases.
+
 ## [0.1.0] - 2026-11-15
 
 ### Added

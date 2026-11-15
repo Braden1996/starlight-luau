@@ -44,5 +44,6 @@ Thank you for helping. This page covers setup, the checks, and the house style.
 3. Run `bun run banner` in `packages/starlight-luau`, then merge.
 4. Tag `vX.Y.Z` on `main` and push the tag.
 
-The release workflow re-runs the gate, checks that the tag matches the version, packs the tarball and publishes it
-with its checksum.
+The release workflow re-runs the gate, checks that the tag matches the version, packs the tarball, and attaches it
+with its checksum to a GitHub release. It then publishes the same tarball to npm through trusted publishing (OIDC,
+with provenance), so the repository holds no npm token.
