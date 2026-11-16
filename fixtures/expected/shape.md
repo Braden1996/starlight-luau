@@ -74,6 +74,8 @@ end
 
 ### `circle`
 
+<p class="sl-luau-status-line"><span class="sl-luau-status sl-luau-status-success" data-status="modelled" title="The fake behaves like the game.">Modelled</span></p>
+
 <pre class="sl-luau-signature"><code><span class="luau-keyword">function</span> Shape.circle(<span class="luau-parameter">radius</span>: <span class="luau-builtin">number</span>): <a class="luau-type" href="/api/shape/#type-Circle">Circle</a></code></pre>
 
 #### Examples
@@ -102,6 +104,8 @@ t.equal(Shape.area(Shape.circle(1)), math.pi)
 <a id="square" class="sl-luau-anchor"></a>
 
 ### `square`
+
+<p class="sl-luau-status-line"><span class="sl-luau-status sl-luau-status-success" data-status="modelled" title="The fake behaves like the game.">Modelled</span></p>
 
 <pre class="sl-luau-signature"><code><span class="luau-keyword">function</span> Shape.square(<span class="luau-parameter">side</span>: <span class="luau-builtin">number</span>): <a class="luau-type" href="/api/shape/#type-Square">Square</a></code></pre>
 
@@ -132,6 +136,8 @@ t.equal(Shape.area(Shape.square(3)), 9)
 
 ### `area`
 
+<p class="sl-luau-status-line"><span class="sl-luau-status sl-luau-status-caution" data-status="guessed" title="Plausible behaviour, not checked against the game.">Guessed</span> Circle areas use math.pi; the rounding is not checked.</p>
+
 <pre class="sl-luau-signature"><code><span class="luau-keyword">function</span> Shape.area(<span class="luau-parameter">shape</span>: <a class="luau-type" href="/api/shape/#type-Shape">Shape</a>): <span class="luau-builtin">number</span></code></pre>
 
 The area in square units. Circles use `math.pi`, so their areas are not exact.
@@ -161,6 +167,8 @@ t.equal(Shape.area(Shape.circle(1)), math.pi)
 <a id="kind" class="sl-luau-anchor"></a>
 
 ### `kind`
+
+<p class="sl-luau-status-line"><span class="sl-luau-status sl-luau-status-note" data-status="recorded" title="Replays values captured in the game.">Recorded</span></p>
 
 <pre class="sl-luau-signature"><code><span class="luau-keyword">function</span> Shape.kind&lt;<span class="luau-generic">S</span>&gt;(<span class="luau-parameter">shape</span>: <span class="luau-generic">S</span>): <a class="luau-type" href="/api/shape/#type-KindOf">KindOf</a>&lt;<span class="luau-generic">S</span>&gt;</code></pre>
 

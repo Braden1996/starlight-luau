@@ -94,3 +94,62 @@
   display: table;
   width: 100%;
 }
+
+.sl-markdown-content .sl-luau-status {
+  display: inline-block;
+  padding: 0.0625rem 0.5rem;
+  border: 1px solid var(--sl-luau-status-border);
+  border-radius: 0.25rem;
+  background: var(--sl-luau-status-surface);
+  color: var(--sl-luau-status-text);
+  font-size: var(--sl-text-xs);
+  font-weight: 600;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+.sl-luau-status-default {
+  --sl-luau-status-text: var(--sl-color-text-accent);
+  --sl-luau-status-surface: var(--sl-color-accent-low);
+  --sl-luau-status-border: var(--sl-color-accent);
+}
+
+.sl-luau-status-note {
+  --sl-luau-status-text: var(--sl-color-blue-high);
+  --sl-luau-status-surface: var(--sl-color-blue-low);
+  --sl-luau-status-border: var(--sl-color-blue);
+}
+
+.sl-luau-status-tip {
+  --sl-luau-status-text: var(--sl-color-purple-high);
+  --sl-luau-status-surface: var(--sl-color-purple-low);
+  --sl-luau-status-border: var(--sl-color-purple);
+}
+
+.sl-luau-status-success {
+  --sl-luau-status-text: var(--sl-color-green-high);
+  --sl-luau-status-surface: var(--sl-color-green-low);
+  --sl-luau-status-border: var(--sl-color-green);
+}
+
+.sl-luau-status-caution {
+  --sl-luau-status-text: var(--sl-color-orange-high);
+  --sl-luau-status-surface: var(--sl-color-orange-low);
+  --sl-luau-status-border: var(--sl-color-orange);
+}
+
+.sl-luau-status-danger {
+  --sl-luau-status-text: var(--sl-color-red-high);
+  --sl-luau-status-surface: var(--sl-color-red-low);
+  --sl-luau-status-border: var(--sl-color-red);
+}
+
+.sl-markdown-content .sl-luau-status-line {
+  color: var(--sl-color-gray-3);
+  font-size: var(--sl-text-sm);
+}
+
+.sl-markdown-content table.sl-luau-status-legend {
+  display: table;
+  width: 100%;
+}

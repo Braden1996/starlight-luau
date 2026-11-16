@@ -6,6 +6,12 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+### Added
+
+- Status badges: the `status` option reads a JSON file of per-function levels that you define, such as how much of
+  each function an emulator implements. Function sections show a badge and note; the overview counts levels per
+  module and adds a legend.
+
 ### Changed
 
 - Releases are published to npm as `starlight-luau`, with provenance, as well as to GitHub releases.
