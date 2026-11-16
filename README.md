@@ -49,6 +49,7 @@ That module becomes a page with:
 - [Examples from tests](#examples-from-tests)
 - [Status badges](#status-badges)
 - [What is rendered](#what-is-rendered)
+- [Styling](#styling)
 - [How it works](#how-it-works)
 - [Why a plugin and not a CLI](#why-a-plugin-and-not-a-cli)
 - [Development](#development)
@@ -229,6 +230,14 @@ Everything comes from the Luau AST (`luau-ast`), checked against the fixture lib
   `require("./Other")`d one. Generics and builtins are styled but not linked.
 - **Layout:** signatures are pretty-printed to `printWidth`. Parameters break one per line before the return type does,
   and long unions break before each `|`.
+
+## Styling
+
+The plugin adds its stylesheet after the site's own `customCss`. Every rule is in the `starlight-luau` cascade layer,
+which comes after Starlight's `starlight` layer, so a theme plugin's layer or a site's unlayered stylesheet overrides
+any of it. The quickest change is the colour variables on `:root`: `--sl-luau-keyword`, `--sl-luau-type`,
+`--sl-luau-generic`, `--sl-luau-builtin`, `--sl-luau-string`, `--sl-luau-literal`, `--sl-luau-parameter`,
+`--sl-luau-property`, `--sl-luau-surface` and `--sl-luau-border`.
 
 ## How it works
 
