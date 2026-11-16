@@ -106,6 +106,8 @@ end
 
 ### `new`
 
+<p class="sl-luau-status-line"><span class="sl-luau-status sl-luau-status-success" data-status="modelled" title="The fake behaves like the game.">Modelled</span></p>
+
 <pre class="sl-luau-signature"><code><span class="luau-keyword">function</span> Inventory.new&lt;<span class="luau-generic">T</span>&gt;(<span class="luau-parameter">capacity</span>: <span class="luau-builtin">number</span>, ...: <span class="luau-generic">T</span>): <a class="luau-type" href="/api/inventory/#type-Inventory">Inventory</a>&lt;<span class="luau-generic">T</span>&gt;</code></pre>
 
 #### Examples
@@ -127,6 +129,8 @@ t.equal(Inventory.first(inventory), "a")
 
 ### `first`
 
+<p class="sl-luau-status-line"><span class="sl-luau-status sl-luau-status-success" data-status="modelled" title="The fake behaves like the game.">Modelled</span></p>
+
 <pre class="sl-luau-signature"><code><span class="luau-keyword">function</span> Inventory.first&lt;<span class="luau-generic">I</span>&gt;(<span class="luau-parameter">inventory</span>: <span class="luau-generic">I</span>): <a class="luau-type" href="/api/inventory/#type-ItemOf">ItemOf</a>&lt;<span class="luau-generic">I</span>&gt;?</code></pre>
 
 <p class="sl-luau-generics"><code>I</code> is inferred as a whole type and read through <a href="/api/inventory/#type-ItemOf"><code>ItemOf</code></a>.</p>
@@ -136,6 +140,8 @@ t.equal(Inventory.first(inventory), "a")
 <a id="each" class="sl-luau-anchor"></a>
 
 ### `each`
+
+<p class="sl-luau-status-line"><span class="sl-luau-status sl-luau-status-note" data-status="recorded" title="Replays values captured in the game.">Recorded</span></p>
 
 <pre class="sl-luau-signature"><code><span class="luau-keyword">function</span> Inventory.each&lt;<span class="luau-generic">T</span>, <span class="luau-generic">A...</span>&gt;(
   <span class="luau-parameter">inventory</span>: <a class="luau-type" href="/api/inventory/#type-Inventory">Inventory</a>&lt;<span class="luau-generic">T</span>&gt;,
@@ -167,6 +173,8 @@ t.equal(finished, false)
 
 ### `stamp`
 
+<p class="sl-luau-status-line"><span class="sl-luau-status sl-luau-status-danger" data-status="not-faked" title="Calling it fails.">Not faked</span></p>
+
 <pre class="sl-luau-signature"><code><span class="luau-keyword">function</span> Inventory.stamp&lt;<span class="luau-generic">T</span>&gt;(<span class="luau-parameter">value</span>: <span class="luau-generic">T</span>, <span class="luau-parameter">stamp</span>: <span class="luau-builtin">number</span>): <a class="luau-type" href="/api/inventory/#type-Stamped">Stamped</a>&lt;<span class="luau-generic">T</span>&gt;</code></pre>
 
 <p class="sl-luau-source"><a href="https://github.com/Braden1996/starlight-luau/blob/main/fixtures/src/Inventory.luau#L51">Source: Inventory.luau, line 51</a></p>
@@ -174,6 +182,8 @@ t.equal(finished, false)
 <a id="place" class="sl-luau-anchor"></a>
 
 ### `place`
+
+<p class="sl-luau-status-line"><span class="sl-luau-status sl-luau-status-danger" data-status="not-faked" title="Calling it fails.">Not faked</span></p>
 
 <pre class="sl-luau-signature"><code><span class="luau-keyword">function</span> Inventory.place(<span class="luau-parameter">shape</span>: Shape.<a class="luau-type" href="/api/shape/#type-Shape">Shape</a>, <span class="luau-parameter">x</span>: <span class="luau-builtin">number</span>, <span class="luau-parameter">y</span>: <span class="luau-builtin">number</span>): <a class="luau-type" href="/api/inventory/#type-Placement">Placement</a></code></pre>
 
@@ -195,6 +205,8 @@ t.equal(placement.at, { x = 4, y = 5 })
 
 ### `split`
 
+<p class="sl-luau-status-line"><span class="sl-luau-status sl-luau-status-danger" data-status="not-faked" title="Calling it fails.">Not faked</span></p>
+
 <pre class="sl-luau-signature"><code><span class="luau-keyword">function</span> Inventory.split(<span class="luau-parameter">text</span>: <span class="luau-builtin">string</span>, <span class="luau-parameter">separator</span>: <span class="luau-builtin">string</span>?): ...<span class="luau-builtin">string</span></code></pre>
 
 <p class="sl-luau-source"><a href="https://github.com/Braden1996/starlight-luau/blob/main/fixtures/src/Inventory.luau#L61">Source: Inventory.luau, line 61</a></p>
@@ -202,6 +214,8 @@ t.equal(placement.at, { x = 4, y = 5 })
 <a id="describe" class="sl-luau-anchor"></a>
 
 ### `describe`
+
+<p class="sl-luau-status-line"><span class="sl-luau-status sl-luau-status-danger" data-status="not-faked" title="Calling it fails.">Not faked</span></p>
 
 <pre class="sl-luau-signature"><code><span class="luau-keyword">function</span> Inventory.describe(
   <span class="luau-parameter">entry</span>: <span class="luau-builtin">string</span> | <span class="luau-builtin">number</span> | <span class="luau-builtin">boolean</span> | <span class="luau-builtin">nil</span>,

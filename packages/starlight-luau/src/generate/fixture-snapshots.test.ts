@@ -31,6 +31,7 @@ describe("the fixture library", () => {
       "Inventory.luau",
       "Shape.spec.luau",
       "Inventory.spec.luau",
+      "status.json",
     ]);
   });
 });

@@ -4,6 +4,7 @@ import { examplesForFunction } from "../examples/assign-examples.ts";
 import type { TestExample } from "../examples/extract-tests.ts";
 import { scopeOfFunction } from "../link/api-index.ts";
 import type { FunctionEntry, ModuleApi } from "../model/module-api.ts";
+import { statusOf } from "../status/api-status.ts";
 import { codeBlockHtml } from "./html.ts";
 import { createLinker } from "./linker.ts";
 import {
@@ -20,6 +21,7 @@ import type { PageContext } from "./page-context.ts";
 import { sourceParagraph } from "./page-context.ts";
 import { entryAnchor } from "./routes.ts";
 import { functionSignatureDoc } from "./signature-doc.ts";
+import { statusLine } from "./status-badge.ts";
 
 function functionNamesOf(module: ModuleApi): ReadonlySet<string> {
   return new Set(module.functions.map((entry) => entry.name));
@@ -71,6 +73,9 @@ export function functionSection(
   const linker = createLinker(context.index, context.routes, scopeOfFunction(module, entry));
   return blocks(
     anchoredHeading(3, entryAnchor(entry), entry.name),
+    context.status === undefined
+      ? undefined
+      : statusLine(statusOf(context.status, module, entry.name)),
     codeBlockHtml(functionSignatureDoc(displayName(module), entry, linker), context.printWidth),
     readersNote(typeFunctionReaders(module, entry, context.index), context),
     prose,

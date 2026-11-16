@@ -32,6 +32,10 @@ function generateInto(options: ResolvedOptions, parameters: SetupParameters): re
     }),
     printWidth: options.printWidth,
     sourceLink: sourceLinkFromTemplate(options.sourceUrl),
+    status:
+      options.status === undefined
+        ? undefined
+        : { ...options.status, file: resolve(projectRoot, options.status.file) },
     title: options.title,
   });
   writePages(

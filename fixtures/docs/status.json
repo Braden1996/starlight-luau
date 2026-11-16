@@ -1,0 +1,13 @@
+{
+  "Shape": {
+    "circle": "modelled",
+    "square": "modelled",
+    "area": { "level": "guessed", "note": "Circle areas use math.pi; the rounding is not checked." },
+    "kind": "recorded"
+  },
+  "Inventory": {
+    "new": "modelled",
+    "first": "modelled",
+    "each": "recorded"
+  }
+}

@@ -15,6 +15,8 @@ import { renderModulePage } from "../render/module-page.ts";
 import type { PageContext, SourceLink } from "../render/page-context.ts";
 import type { Routes } from "../render/routes.ts";
 import { moduleSlug } from "../render/routes.ts";
+import type { StatusOptions } from "../status/api-status.ts";
+import { loadStatus, unmatchedStatus } from "../status/api-status.ts";
 import { discoverModules, exampleFilesFor } from "./discover-modules.ts";
 
 export interface ExampleOptions {
@@ -33,6 +35,7 @@ export interface GenerateOptions {
   readonly routes: Routes;
   readonly printWidth: number;
   readonly sourceLink: SourceLink | undefined;
+  readonly status: StatusOptions | undefined;
   readonly title: string;
 }
 
@@ -75,16 +78,24 @@ export function generateApi(options: GenerateOptions): Generation {
     module,
     api: parseModuleFile(options.luauAst, module).api,
   }));
-  const index = new ApiIndex(parsed.map(({ api }) => api));
+  const apis = parsed.map(({ api }) => api);
+  const index = new ApiIndex(apis);
+  const status = options.status === undefined ? undefined : loadStatus(options.status);
   const context: PageContext = {
     index,
     routes: options.routes,
     printWidth: options.printWidth,
     sourceLink: options.sourceLink,
+    status,
   };
   const warnings: string[] = discovery.missing.map(
     (name) => `module ${name} is listed but no file matches it`,
   );
+  if (status !== undefined) {
+    warnings.push(
+      ...unmatchedStatus(status, apis).map((name) => `status for ${name} matches no function`),
+    );
+  }
   const inputs: string[] = discovery.modules.map((module) => module.path);
   const pageInputs: ModulePageInput[] = parsed.map(({ module, api }, position) => {
     const prose = loadProse(options.proseRoot, api.name);
@@ -95,6 +106,9 @@ export function generateApi(options: GenerateOptions): Generation {
     inputs.push(...files);
     return { module: api, prose, examples, order: position + 1 };
   });
+  if (options.status !== undefined) {
+    inputs.push(options.status.file);
+  }
   const pages: GeneratedPage[] = [
     { path: "index.md", content: renderIndexPage(options.title, pageInputs, context) },
     ...pageInputs.map((input) => ({

@@ -1,4 +1,5 @@
 import type { ApiIndex } from "../link/api-index.ts";
+import type { ApiStatus } from "../status/api-status.ts";
 import type { Doc } from "./doc.ts";
 import { escapeHtml, tokenHtml } from "./html.ts";
 import { layout } from "./layout.ts";
@@ -12,6 +13,7 @@ export interface PageContext {
   readonly routes: Routes;
   readonly printWidth: number;
   readonly sourceLink: SourceLink | undefined;
+  readonly status: ApiStatus | undefined;
 }
 
 export function inlineHtml(doc: Doc): string {

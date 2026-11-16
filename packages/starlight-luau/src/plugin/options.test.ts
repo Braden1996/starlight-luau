@@ -17,6 +17,7 @@ describe("resolveOptions", () => {
         testFunctions: ["test", "it"],
       },
       sourceUrl: undefined,
+      status: undefined,
       luauAst: "luau-ast",
       printWidth: 80,
       sidebar: true,
@@ -38,6 +39,55 @@ describe("resolveOptions", () => {
     expect(() => resolveOptions({ source: "src", output: "../outside" })).toThrow("`output`");
     expect(() => resolveOptions({ source: "src", output: "/" })).toThrow("`output`");
     expect(() => resolveOptions({ source: "src", printWidth: 5 })).toThrow("`printWidth`");
+  });
+});
+
+describe("status options", () => {
+  const levels = {
+    modelled: { label: "Modelled", tone: "success", description: "Behaves like the game." },
+    guessed: { label: "Guessed" },
+  } as const;
+
+  test("keep the levels in order, defaulting the tone", () => {
+    expect(
+      resolveOptions({ source: "src", status: { file: "status.json", levels } }).status,
+    ).toEqual({
+      file: "status.json",
+      levels: [
+        {
+          id: "modelled",
+          label: "Modelled",
+          tone: "success",
+          description: "Behaves like the game.",
+        },
+        { id: "guessed", label: "Guessed", tone: "default", description: undefined },
+      ],
+      unlisted: undefined,
+    });
+  });
+
+  test("reject no levels, an unknown unlisted level, an empty label and an unknown tone", () => {
+    const status = { file: "status.json", levels };
+    expect(() => resolveOptions({ source: "src", status: { ...status, levels: {} } })).toThrow(
+      "at least one level",
+    );
+    expect(() =>
+      resolveOptions({ source: "src", status: { ...status, unlisted: "faked" } }),
+    ).toThrow("`status.unlisted`");
+    expect(() =>
+      resolveOptions({
+        source: "src",
+        status: { ...status, levels: { modelled: { label: " " } } },
+      }),
+    ).toThrow("non-empty");
+    expect(() => resolveOptions({ source: "src", status: { ...status, file: "" } })).toThrow(
+      "`status.file`",
+    );
+    const odd = { label: "Odd" };
+    Object.assign(odd, { tone: "purple" });
+    expect(() =>
+      resolveOptions({ source: "src", status: { file: "status.json", levels: { odd } } }),
+    ).toThrow('tone "purple"');
   });
 });
 

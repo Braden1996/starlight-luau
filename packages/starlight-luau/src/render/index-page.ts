@@ -4,6 +4,7 @@ import { blocks, frontmatter, link } from "./markdown.ts";
 import type { ModulePageInput } from "./module-page.ts";
 import { moduleDescription } from "./module-page.ts";
 import type { PageContext } from "./page-context.ts";
+import { moduleStatusSummary, statusLegend } from "./status-badge.ts";
 
 function countLabel(count: number, noun: string): string {
   return `${String(count)} ${noun}${count === 1 ? "" : "s"}`;
@@ -18,7 +19,11 @@ function moduleRow(input: ModulePageInput, context: PageContext): string {
     countLabel(input.module.functions.length, "function"),
     countLabel(context.index.documentedTypes(input.module).length, "type"),
   ].join(", ");
-  return `<tr><td>${name}</td><td>${counts}</td><td>${escapeHtml(moduleDescription(input))}</td></tr>`;
+  const status =
+    context.status === undefined
+      ? ""
+      : `<td>${moduleStatusSummary(context.status, input.module)}</td>`;
+  return `<tr><td>${name}</td><td>${counts}</td>${status}<td>${escapeHtml(moduleDescription(input))}</td></tr>`;
 }
 
 export function renderIndexPage(
@@ -34,9 +39,10 @@ export function renderIndexPage(
   });
   const table = [
     '<table class="sl-luau-modules">',
-    "<thead><tr><th>Module</th><th>Contents</th><th>Summary</th></tr></thead>",
+    `<thead><tr><th>Module</th><th>Contents</th>${context.status === undefined ? "" : "<th>Status</th>"}<th>Summary</th></tr></thead>`,
     `<tbody>${inputs.map((input) => moduleRow(input, context)).join("")}</tbody>`,
     "</table>",
   ].join("\n");
-  return `${blocks(header, table)}\n`;
+  const legend = context.status === undefined ? undefined : statusLegend(context.status);
+  return `${blocks(header, table, legend)}\n`;
 }
