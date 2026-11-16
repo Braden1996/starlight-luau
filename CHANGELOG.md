@@ -6,6 +6,8 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-11-16
+
 ### Added
 
 - Status badges: the `status` option reads a JSON file of per-function levels that you define, such as how much of
@@ -32,5 +34,6 @@ All notable changes to this project are documented here. The format follows
 - Examples from colocated unit tests: test names as behaviour descriptions and test bodies as code.
 - `generateApi`, for building pages without the plugin.
 
-[Unreleased]: https://github.com/Braden1996/starlight-luau/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/Braden1996/starlight-luau/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/Braden1996/starlight-luau/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/Braden1996/starlight-luau/releases/tag/v0.1.0
