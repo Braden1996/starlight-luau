@@ -6,6 +6,8 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-11-16
+
 ### Changed
 
 - The stylesheet's rules are in a `starlight-luau` cascade layer, after Starlight's, so a theme such as
@@ -39,6 +41,7 @@ All notable changes to this project are documented here. The format follows
 - Examples from colocated unit tests: test names as behaviour descriptions and test bodies as code.
 - `generateApi`, for building pages without the plugin.
 
-[Unreleased]: https://github.com/Braden1996/starlight-luau/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/Braden1996/starlight-luau/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/Braden1996/starlight-luau/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/Braden1996/starlight-luau/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/Braden1996/starlight-luau/releases/tag/v0.1.0

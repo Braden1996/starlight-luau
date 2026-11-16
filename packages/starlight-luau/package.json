@@ -1,6 +1,6 @@
 {
   "name": "starlight-luau",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A Starlight plugin that generates an API reference from Luau types: no doc comments needed.",
   "keywords": ["starlight", "starlight-plugin", "astro", "luau", "api-reference", "documentation"],
   "homepage": "https://github.com/Braden1996/starlight-luau#readme",
