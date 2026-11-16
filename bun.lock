@@ -21,7 +21,7 @@
     },
     "packages/starlight-luau": {
       "name": "starlight-luau",
-      "version": "0.2.0",
+      "version": "0.3.0",
       "devDependencies": {
         "@astrojs/starlight": "0.43.1",
         "@types/bun": "1.4.4",
