@@ -6,6 +6,11 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+### Changed
+
+- The stylesheet's rules are in a `starlight-luau` cascade layer, after Starlight's, so a theme such as
+  starlight-warcraft can restyle signatures and badges without `!important` or an unlayered file.
+
 ## [0.2.0] - 2026-11-16
 
 ### Added

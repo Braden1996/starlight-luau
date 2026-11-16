@@ -1,155 +1,159 @@
-:root {
-  --sl-luau-keyword: var(--sl-color-purple-high, #c792ea);
-  --sl-luau-type: var(--sl-color-blue-high, #82aaff);
-  --sl-luau-generic: var(--sl-color-orange-high, #f78c6c);
-  --sl-luau-builtin: var(--sl-color-green-high, #4ec9b0);
-  --sl-luau-string: var(--sl-color-green-high, #c3e88d);
-  --sl-luau-literal: var(--sl-color-orange-high, #f78c6c);
-  --sl-luau-parameter: var(--sl-color-white, inherit);
-  --sl-luau-property: var(--sl-color-white, inherit);
-  --sl-luau-surface: var(--sl-color-gray-6, #1e1e1e);
-  --sl-luau-border: var(--sl-color-hairline-light, #444);
-}
+@layer starlight, starlight-luau;
 
-.sl-markdown-content pre.sl-luau-signature {
-  margin-block: 0.75rem 1rem;
-  padding: 0.85rem 1rem;
-  overflow-x: auto;
-  border: 1px solid var(--sl-luau-border);
-  border-radius: 0.375rem;
-  background: var(--sl-luau-surface);
-  font-family: var(--__sl-font-mono, var(--sl-font-mono, monospace));
-  font-size: var(--sl-text-code, 0.875rem);
-  line-height: 1.6;
-  tab-size: 2;
-}
+@layer starlight-luau {
+  :root {
+    --sl-luau-keyword: var(--sl-color-purple-high, #c792ea);
+    --sl-luau-type: var(--sl-color-blue-high, #82aaff);
+    --sl-luau-generic: var(--sl-color-orange-high, #f78c6c);
+    --sl-luau-builtin: var(--sl-color-green-high, #4ec9b0);
+    --sl-luau-string: var(--sl-color-green-high, #c3e88d);
+    --sl-luau-literal: var(--sl-color-orange-high, #f78c6c);
+    --sl-luau-parameter: var(--sl-color-white, inherit);
+    --sl-luau-property: var(--sl-color-white, inherit);
+    --sl-luau-surface: var(--sl-color-gray-6, #1e1e1e);
+    --sl-luau-border: var(--sl-color-hairline-light, #444);
+  }
 
-.sl-markdown-content pre.sl-luau-signature code {
-  padding: 0;
-  background: none;
-  font-size: inherit;
-  white-space: pre;
-}
+  .sl-markdown-content pre.sl-luau-signature {
+    margin-block: 0.75rem 1rem;
+    padding: 0.85rem 1rem;
+    overflow-x: auto;
+    border: 1px solid var(--sl-luau-border);
+    border-radius: 0.375rem;
+    background: var(--sl-luau-surface);
+    font-family: var(--__sl-font-mono, var(--sl-font-mono, monospace));
+    font-size: var(--sl-text-code, 0.875rem);
+    line-height: 1.6;
+    tab-size: 2;
+  }
 
-.sl-markdown-content .sl-luau-inline {
-  white-space: nowrap;
-}
+  .sl-markdown-content pre.sl-luau-signature code {
+    padding: 0;
+    background: none;
+    font-size: inherit;
+    white-space: pre;
+  }
 
-.sl-markdown-content :is(pre.sl-luau-signature, .sl-luau-inline) a {
-  text-decoration: underline;
-  text-decoration-color: color-mix(in srgb, currentColor 40%, transparent);
-  text-underline-offset: 0.2em;
-}
+  .sl-markdown-content .sl-luau-inline {
+    white-space: nowrap;
+  }
 
-.sl-markdown-content :is(pre.sl-luau-signature, .sl-luau-inline) a:hover {
-  text-decoration-color: currentColor;
-}
+  .sl-markdown-content :is(pre.sl-luau-signature, .sl-luau-inline) a {
+    text-decoration: underline;
+    text-decoration-color: color-mix(in srgb, currentColor 40%, transparent);
+    text-underline-offset: 0.2em;
+  }
 
-.luau-keyword {
-  color: var(--sl-luau-keyword);
-}
+  .sl-markdown-content :is(pre.sl-luau-signature, .sl-luau-inline) a:hover {
+    text-decoration-color: currentColor;
+  }
 
-.luau-type {
-  color: var(--sl-luau-type);
-}
+  .luau-keyword {
+    color: var(--sl-luau-keyword);
+  }
 
-.luau-generic {
-  color: var(--sl-luau-generic);
-  font-style: italic;
-}
+  .luau-type {
+    color: var(--sl-luau-type);
+  }
 
-.luau-builtin {
-  color: var(--sl-luau-builtin);
-}
+  .luau-generic {
+    color: var(--sl-luau-generic);
+    font-style: italic;
+  }
 
-.luau-string {
-  color: var(--sl-luau-string);
-}
+  .luau-builtin {
+    color: var(--sl-luau-builtin);
+  }
 
-.luau-literal {
-  color: var(--sl-luau-literal);
-}
+  .luau-string {
+    color: var(--sl-luau-string);
+  }
 
-.luau-parameter {
-  color: var(--sl-luau-parameter);
-}
+  .luau-literal {
+    color: var(--sl-luau-literal);
+  }
 
-.luau-property {
-  color: var(--sl-luau-property);
-}
+  .luau-parameter {
+    color: var(--sl-luau-parameter);
+  }
 
-.sl-markdown-content .sl-luau-note,
-.sl-markdown-content .sl-luau-source,
-.sl-markdown-content .sl-luau-generics {
-  color: var(--sl-color-gray-3);
-  font-size: var(--sl-text-sm);
-}
+  .luau-property {
+    color: var(--sl-luau-property);
+  }
 
-.sl-markdown-content .sl-luau-source a {
-  color: inherit;
-}
+  .sl-markdown-content .sl-luau-note,
+  .sl-markdown-content .sl-luau-source,
+  .sl-markdown-content .sl-luau-generics {
+    color: var(--sl-color-gray-3);
+    font-size: var(--sl-text-sm);
+  }
 
-.sl-markdown-content table.sl-luau-variants,
-.sl-markdown-content table.sl-luau-modules {
-  display: table;
-  width: 100%;
-}
+  .sl-markdown-content .sl-luau-source a {
+    color: inherit;
+  }
 
-.sl-markdown-content .sl-luau-status {
-  display: inline-block;
-  padding: 0.0625rem 0.5rem;
-  border: 1px solid var(--sl-luau-status-border);
-  border-radius: 0.25rem;
-  background: var(--sl-luau-status-surface);
-  color: var(--sl-luau-status-text);
-  font-size: var(--sl-text-xs);
-  font-weight: 600;
-  line-height: 1.5;
-  white-space: nowrap;
-}
+  .sl-markdown-content table.sl-luau-variants,
+  .sl-markdown-content table.sl-luau-modules {
+    display: table;
+    width: 100%;
+  }
 
-.sl-luau-status-default {
-  --sl-luau-status-text: var(--sl-color-text-accent);
-  --sl-luau-status-surface: var(--sl-color-accent-low);
-  --sl-luau-status-border: var(--sl-color-accent);
-}
+  .sl-markdown-content .sl-luau-status {
+    display: inline-block;
+    padding: 0.0625rem 0.5rem;
+    border: 1px solid var(--sl-luau-status-border);
+    border-radius: 0.25rem;
+    background: var(--sl-luau-status-surface);
+    color: var(--sl-luau-status-text);
+    font-size: var(--sl-text-xs);
+    font-weight: 600;
+    line-height: 1.5;
+    white-space: nowrap;
+  }
 
-.sl-luau-status-note {
-  --sl-luau-status-text: var(--sl-color-blue-high);
-  --sl-luau-status-surface: var(--sl-color-blue-low);
-  --sl-luau-status-border: var(--sl-color-blue);
-}
+  .sl-luau-status-default {
+    --sl-luau-status-text: var(--sl-color-text-accent);
+    --sl-luau-status-surface: var(--sl-color-accent-low);
+    --sl-luau-status-border: var(--sl-color-accent);
+  }
 
-.sl-luau-status-tip {
-  --sl-luau-status-text: var(--sl-color-purple-high);
-  --sl-luau-status-surface: var(--sl-color-purple-low);
-  --sl-luau-status-border: var(--sl-color-purple);
-}
+  .sl-luau-status-note {
+    --sl-luau-status-text: var(--sl-color-blue-high);
+    --sl-luau-status-surface: var(--sl-color-blue-low);
+    --sl-luau-status-border: var(--sl-color-blue);
+  }
 
-.sl-luau-status-success {
-  --sl-luau-status-text: var(--sl-color-green-high);
-  --sl-luau-status-surface: var(--sl-color-green-low);
-  --sl-luau-status-border: var(--sl-color-green);
-}
+  .sl-luau-status-tip {
+    --sl-luau-status-text: var(--sl-color-purple-high);
+    --sl-luau-status-surface: var(--sl-color-purple-low);
+    --sl-luau-status-border: var(--sl-color-purple);
+  }
 
-.sl-luau-status-caution {
-  --sl-luau-status-text: var(--sl-color-orange-high);
-  --sl-luau-status-surface: var(--sl-color-orange-low);
-  --sl-luau-status-border: var(--sl-color-orange);
-}
+  .sl-luau-status-success {
+    --sl-luau-status-text: var(--sl-color-green-high);
+    --sl-luau-status-surface: var(--sl-color-green-low);
+    --sl-luau-status-border: var(--sl-color-green);
+  }
 
-.sl-luau-status-danger {
-  --sl-luau-status-text: var(--sl-color-red-high);
-  --sl-luau-status-surface: var(--sl-color-red-low);
-  --sl-luau-status-border: var(--sl-color-red);
-}
+  .sl-luau-status-caution {
+    --sl-luau-status-text: var(--sl-color-orange-high);
+    --sl-luau-status-surface: var(--sl-color-orange-low);
+    --sl-luau-status-border: var(--sl-color-orange);
+  }
 
-.sl-markdown-content .sl-luau-status-line {
-  color: var(--sl-color-gray-3);
-  font-size: var(--sl-text-sm);
-}
+  .sl-luau-status-danger {
+    --sl-luau-status-text: var(--sl-color-red-high);
+    --sl-luau-status-surface: var(--sl-color-red-low);
+    --sl-luau-status-border: var(--sl-color-red);
+  }
 
-.sl-markdown-content table.sl-luau-status-legend {
-  display: table;
-  width: 100%;
+  .sl-markdown-content .sl-luau-status-line {
+    color: var(--sl-color-gray-3);
+    font-size: var(--sl-text-sm);
+  }
+
+  .sl-markdown-content table.sl-luau-status-legend {
+    display: table;
+    width: 100%;
+  }
 }
