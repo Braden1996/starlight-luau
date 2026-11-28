@@ -18,8 +18,8 @@
     }
   },
   "devDependencies": {
-    "@sgt-build/oxlint-config": "file:../sergeant/dist/npm/sgt-build-oxlint-config-0.15.0.tgz",
-    "@sgt-build/tsconfig": "file:../sergeant/dist/npm/sgt-build-tsconfig-0.15.0.tgz",
+    "@sgt-build/oxlint-config": "0.15.0",
+    "@sgt-build/tsconfig": "0.15.0",
     "@types/bun": "catalog:",
     "@types/node": "catalog:",
     "oxlint": "1.95.0",

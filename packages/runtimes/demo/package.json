@@ -12,6 +12,6 @@
   "dependencies": {
     "@astrojs/starlight": "catalog:",
     "astro": "catalog:",
-    "@starlight-luau/library": "workspace:starlight-luau@*"
+    "starlight-luau": "workspace:*"
   }
 }

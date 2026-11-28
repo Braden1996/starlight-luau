@@ -1,17 +1,11 @@
 import starlight from "@astrojs/starlight";
 import { defineConfig } from "astro/config";
-
-import starlightLuau from "@starlight-luau/library";
+import starlightLuau from "starlight-luau/index.ts";
 
 export default defineConfig({
   output: "static",
   base: "/starlight-luau",
   trailingSlash: "always",
-  vite: {
-    resolve: {
-      alias: { "starlight-luau/styles.css": "@starlight-luau/library/styles.css" },
-    },
-  },
   integrations: [
     starlight({
       title: "starlight-luau demo",
