@@ -1,0 +1,6 @@
+{
+  "languageMode": "strict",
+  "aliases": {
+    "starlight-luau": ".sergeant/luau/starlight-luau"
+  }
+}

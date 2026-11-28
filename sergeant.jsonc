@@ -1,0 +1,27 @@
+{
+  "$schema": "./.sergeant/schema.json",
+  "plugins": ["ts", "bun", "oxlint", "astro", "luau", "actionlint", "zizmor", "lychee", "secrets"],
+  "packages": ["packages/libraries/*/*/*", "packages/runtimes/*"],
+  "workspace": {
+    "libraries": ["fixtures"],
+  },
+  "boundaries": {
+    "noUnitCycles": true,
+  },
+  "cache": { "untrackable": "degrade" },
+  "tasks": {
+    "banner-fresh": {
+      "run": ["bun", "scripts/banner.ts", "--check"],
+      "inputs": ["scripts/banner.ts", ".github/banner.svg", "packages/libraries/ts/node/starlight-luau/package.json"],
+      "check": true,
+    },
+    "banner": {
+      "run": ["bun", "scripts/banner.ts"],
+      "mode": "live",
+    },
+    "snapshots": {
+      "run": ["bun", "packages/libraries/ts/node/starlight-luau/src/testing/update-snapshots.effect.ts"],
+      "mode": "live",
+    },
+  },
+}

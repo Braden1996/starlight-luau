@@ -1,9 +1,9 @@
 --!strict
-local Harness = require("../harness/Harness")
 local Inventory = require("./Inventory")
 local Shape = require("./Shape")
+local Harness = require("./harness/Harness")
 
-return function(t: Harness.T)
+return Harness.spec(function(t: Harness.T)
 	t.test("new keeps the items in order", function()
 		local inventory = Inventory.new(3, "a", "b")
 		t.equal(inventory.items, { "a", "b" })
@@ -23,4 +23,4 @@ return function(t: Harness.T)
 		local placement = Inventory.place(Shape.square(1), 4, 5)
 		t.equal(placement.at, { x = 4, y = 5 })
 	end)
-end
+end)

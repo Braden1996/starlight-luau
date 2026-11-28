@@ -1,0 +1,5 @@
+rules:
+  unpinned-uses:
+    config:
+      policies:
+        Braden1996/sergeant-releases: ref-pin

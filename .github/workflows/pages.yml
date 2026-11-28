@@ -1,0 +1,48 @@
+name: pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    environment:
+      name: github-pages
+      url: ${{ steps.pages.outputs.page-url }}
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: jdx/mise-action@d5574b52816a478f9d4e6529a3f6ff17a8a36785 # v5.2.8
+        with:
+          install_args: bun node
+          cache: false
+      - uses: Braden1996/sergeant-releases/actions/setup@v0.15.0
+      - uses: Braden1996/sergeant-releases/actions/setup-luau@v0.15.0
+        with:
+          luau-ast: "true"
+          woof: "false"
+      - name: Fetch pinned Sergeant config tarballs
+        run: |
+          mkdir -p ../sergeant/dist/npm
+          npm pack --ignore-scripts --pack-destination ../sergeant/dist/npm @sgt-build/tsconfig@0.15.0 @sgt-build/oxlint-config@0.15.0
+      - run: sgt --no-daemon install --frozen
+      - uses: Braden1996/sergeant-releases/actions/deploy-astro-pages@v0.15.0
+        id: pages
+        with:
+          unit: "@starlight-luau/demo"
+          deploy: "true"

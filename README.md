@@ -267,24 +267,8 @@ A CLI is still possible on top of the exported `generateApi` function if a proje
 
 ## Development
 
-Everything is pinned: tools in [mise.toml](mise.toml) (checksums in `mise.lock`) and packages in `bun.lock`. The gate
-is the same locally and in CI:
-
-```sh
-mise install
-mise exec -- moon run :check
-```
-
-| Project    | Folder                    | Checks                                                                                                                 |
-| ---------- | ------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `repo`     | `.`                       | typos, actionlint, offline link check, dprint                                                                          |
-| `package`  | `packages/starlight-luau` | tsrs typecheck, oxlint (type-aware through tsrs-lint), oxfmt, bun tests (unit and fixture snapshots), banner freshness |
-| `fixtures` | `fixtures`                | luau-lsp on the new solver over the fixture library                                                                    |
-| `demo`     | `demo`                    | builds a Starlight site from the fixtures through the plugin                                                           |
-
-The code has no comments, by design. Names say what things are, functions are small, and each `x.ts` has an
-`x.test.ts` beside it. After changing the output, run `bun run snapshots` in `packages/starlight-luau` and review the
-diff in `fixtures/expected/`. See [CONTRIBUTING.md](CONTRIBUTING.md).
+Follow the [contributor setup](CONTRIBUTING.md) and the [Sergeant setup playbooks](https://github.com/Braden1996/sergeant#readme).
+Run `sgt check`, `sgt test` and `sgt build` from the workspace root. The build renders the fixture API as a Starlight demo under `.sergeant/out/`.
 
 ## Licence
 

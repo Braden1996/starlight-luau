@@ -1,0 +1,4 @@
+{
+  "name": "@starlight-luau/library",
+  "kind": "ts:node",
+}

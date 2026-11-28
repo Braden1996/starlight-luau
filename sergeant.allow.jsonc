@@ -1,0 +1,59 @@
+{
+  "$schema": "./.sergeant/schema.allow.json",
+  "allow": [
+    {
+      "rule": "boundaries/layout",
+      "file": "fixtures/docs/api/Inventory/each.md",
+      "count": 1,
+      "reason": "Keep the published fixture paths and the checked-in golden output stable."
+    },
+    {
+      "rule": "boundaries/layout",
+      "file": "fixtures/docs/api/Shape.md",
+      "count": 1,
+      "reason": "Keep the published fixture paths and the checked-in golden output stable."
+    },
+    {
+      "rule": "boundaries/layout",
+      "file": "fixtures/docs/api/Shape/area.md",
+      "count": 1,
+      "reason": "Keep the published fixture paths and the checked-in golden output stable."
+    },
+    {
+      "rule": "boundaries/layout",
+      "file": "fixtures/docs/api/Shape/types/Shape.md",
+      "count": 1,
+      "reason": "Keep the published fixture paths and the checked-in golden output stable."
+    },
+    {
+      "rule": "boundaries/layout",
+      "file": "fixtures/docs/status.json",
+      "count": 1,
+      "reason": "Keep the published fixture paths and the checked-in golden output stable."
+    },
+    {
+      "rule": "boundaries/layout",
+      "file": "fixtures/expected/index.md",
+      "count": 1,
+      "reason": "Keep the published fixture paths and the checked-in golden output stable."
+    },
+    {
+      "rule": "boundaries/layout",
+      "file": "fixtures/expected/inventory.md",
+      "count": 1,
+      "reason": "Keep the published fixture paths and the checked-in golden output stable."
+    },
+    {
+      "rule": "boundaries/layout",
+      "file": "fixtures/expected/shape.md",
+      "count": 1,
+      "reason": "Keep the published fixture paths and the checked-in golden output stable."
+    },
+    {
+      "rule": "boundaries/barrel",
+      "file": "packages/libraries/ts/node/starlight-luau/src/index.ts",
+      "count": 5,
+      "reason": "This entry point preserves the published starlight-luau API."
+    }
+  ]
+}

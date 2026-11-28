@@ -33,18 +33,18 @@ function Inventory.first<I>(inventory: I): ItemOf<I>?
 	return (inventory :: any).items[1]
 end
 
-function Inventory.each<T, A...>(
-	inventory: Inventory<T>,
-	visit: Visitor<T, A...>,
-	...: A...
-): (number, boolean)
+function Inventory.each<T, A...>(inventory: Inventory<T>, visit: Visitor<T, A...>, ...: A...): (number, boolean)
+	local items = inventory.items
 	local visited = 0
-	for _, item in inventory.items do
+
+	for _, item in items do
 		visited += 1
+
 		if not visit(item, ...) then
 			return visited, false
 		end
 	end
+
 	return visited, true
 end
 

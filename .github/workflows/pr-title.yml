@@ -12,16 +12,6 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 5
     steps:
-      - name: conventional commit title
-        env:
-          TITLE: ${{ github.event.pull_request.title }}
-        run: |
-          pattern='^(feat|fix|perf|refactor|test|docs|build|ci|chore|style|revert)(\((parse|link|render|examples|prose|plugin|fixtures|demo|ci|docs|deps|repo)\))?!?: [a-z0-9`].{0,98}[^.]$'
-          if printf '%s' "$TITLE" | grep -Eq "$pattern"; then
-            echo "ok: $TITLE"
-          else
-            echo "::error::Title must look like 'type(scope): summary' (lower-case start, no trailing period)."
-            echo "Types: feat fix perf refactor test docs build ci chore style revert."
-            echo "Scopes: parse link render examples prose plugin fixtures demo ci docs deps repo."
-            exit 1
-          fi
+      - uses: Braden1996/sergeant-releases/actions/pr-title@v0.15.0
+        with:
+          scopes: parse,link,render,examples,prose,plugin,fixtures,demo,ci,docs,deps,repo

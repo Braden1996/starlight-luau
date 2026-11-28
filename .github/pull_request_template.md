@@ -2,7 +2,9 @@
 
 ## Checklist
 
-- [ ] `mise exec -- moon run :check` passes locally
-- [ ] New behaviour has colocated unit tests (`x.ts` beside `x.test.ts`), and no code comments
-- [ ] `fixtures/expected/` and `.github/banner.svg` were regenerated (`bun run snapshots`, `bun run banner` in `packages/starlight-luau`), not edited by hand
-- [ ] `CHANGELOG.md` has a line under "Unreleased" if users will notice the change
+- [ ] `sgt check`, `sgt test` and `sgt build` pass locally
+- [ ] New behavior has colocated tests
+- [ ] If generated output changed, I reviewed the diff from `sgt run snapshots` or `sgt run banner`
+- [ ] User-visible changes have an "Unreleased" entry in `CHANGELOG.md`
+
+See the [Sergeant setup playbooks](https://github.com/Braden1996/sergeant#readme).

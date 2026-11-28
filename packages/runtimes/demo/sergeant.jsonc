@@ -1,0 +1,7 @@
+{
+  "name": "@starlight-luau/demo",
+  "kind": "astro:app",
+  "reads": ["fixtures/src/**", "fixtures/docs/**"],
+  "tools": ["luau-ast"],
+  "devDependencies": ["@starlight-luau/library"],
+}

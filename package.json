@@ -2,12 +2,27 @@
   "name": "starlight-luau-workspace",
   "version": "0.0.0",
   "private": true,
-  "description": "Workspace for starlight-luau: the package, its demo site and repository scripts.",
+  "description": "Workspace for starlight-luau and its demo site.",
   "type": "module",
-  "workspaces": ["packages/*", "demo"],
-  "devDependencies": {
-    "@types/bun": "1.4.4",
-    "@types/node": "26.6.6"
+  "packageManager": "bun@1.4.4",
+  "workspaces": {
+    "packages": [
+      "packages/libraries/ts/*/*",
+      "packages/runtimes/*"
+    ],
+    "catalog": {
+      "@astrojs/starlight": "0.43.1",
+      "@types/bun": "1.4.4",
+      "@types/node": "26.6.6",
+      "astro": "7.4.12"
+    }
   },
-  "packageManager": "bun@1.4.4"
+  "devDependencies": {
+    "@sgt-build/oxlint-config": "file:../sergeant/dist/npm/sgt-build-oxlint-config-0.15.0.tgz",
+    "@sgt-build/tsconfig": "file:../sergeant/dist/npm/sgt-build-tsconfig-0.15.0.tgz",
+    "@types/bun": "catalog:",
+    "@types/node": "catalog:",
+    "oxlint": "1.95.0",
+    "oxlint-tsgolint": "7.0.2009"
+  }
 }
